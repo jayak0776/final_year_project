@@ -1,0 +1,245 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <nav>
+    <p class="nav-title">Heart Disease Prediction</p>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span id="menu-icon">&#9776;</span> 
+    </div>
+    <ul class="ls" id="menu">
+        <li><a href="/" class="ancor">Home</a></li>
+        <li><a href="/about" class="ancor">Info</a></li>
+        <li><a href="/causes" class="ancor" >Causes</a></li>
+        <li><a href="/team" class="ancor">Team Members</a></li>
+    </ul>
+</nav>
+
+<div class="pre">
+  <div>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h2 class='container-heading'><span class="heading_font"> 🫀 Heart Disease Predictor 🫀</span></h2>
+        </div>
+        
+      </div>
+    </header>
+  
+  
+    <section class="form-section">
+      <div class="container">
+        <div class="ml-container">
+          <form action="{{ url_for('predict')}}" method="POST">
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" placeholder="Your age.."><br>
+  
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex">
+              <option selected>----select option----</option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select><br>
+  
+            <label for="cp">Chest Pain Type</label>
+            <select id="cp" name="cp">
+              <option selected>----select option----</option>
+              <option value="0">Typical Angina</option>
+              <option value="1">Atypical Angina</option>
+              <option value="2">Non-anginal Pain</option>
+              <option value="3">Asymtomatic</option>
+            </select><br>
+  
+            <label for="trestbps">Resting Blood Pressure</label>
+            <input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg"><br>
+  
+            <label for="chol">Serum Cholesterol</label>
+            <input type="text" id="chol" name="chol" placeholder="A number in range [126-564] mg/dl"><br>
+  
+            <label for="fbs">Fasting Blood Sugar</label>
+            <select id="fbs" name="fbs">
+              <option selected>----select option----</option>
+              <option value="1">Greater than 120 mg/dl</option>
+              <option value="0">Less than 120 mg/dl</option>
+            </select><br>
+  
+            <label for="restecg">Resting ECG Results</label>
+            <select id="restecg" name="restecg">
+              <option selected>----select option----</option>
+              <option value="0">Normal</option>
+              <option value="1">Having ST-T wave abnormality</option>
+              <option value="2">Probable or definite left ventricular hypertrophy</option>
+            </select><br>
+  
+            <label for="thalach">Max Heart Rate</label>
+            <input type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm"><br>
+  
+            <label for="exang">Exercise-induced Angina</label>
+            <select id="exang" name="exang">
+              <option selected>----select option----</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select><br>
+  
+            <label for="oldpeak">ST Depression</label>
+            <input type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0-6.2]"><br>
+  
+            <label for="slope">Slope of the Peak Exercise ST Segment</label>
+            <select id="slope" name="slope">
+              <option selected>----select option----</option>
+              <option value="0">Upsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Downsloping</option>
+            </select><br>
+  
+            <label for="ca">Number of Major Vessels</label>
+            <input type="text" id="ca" name="ca" placeholder="Typically in [0-4]"><br>
+  
+            <label for="thal">Thalassemia</label>
+            <select id="thal" name="thal">
+              <option selected>----select option----</option>
+              <option value="0">Normal</option>
+              <option value="1">Fixed Defect</option>
+              <option value="2">Reversible Defect</option>
+            </select><br>
+  
+            <input type="submit" class="my-cta-button" value="Predict">
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <h1>Result</h1>
+  </div>
+</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- <style>
+        .pre {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .form-section {
+            flex: 2;
+            padding-right: 20px;
+        }
+        .result-section {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    </style> -->
+</head>
+<body>
+  <nav>
+    <p class="nav-title">Heart Disease Prediction</p>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span id="menu-icon">&#9776;</span> 
+    </div>
+    <ul class="ls" id="menu">
+        <li><a href="/" class="ancor">Home</a></li>
+        <li><a href="/about" class="ancor">Info</a></li>
+        <li><a href="/team" class="ancor">Team Members</a></li>
+    </ul>
+</nav>
+
+<div class="pre">
+  <div class="form-section">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h2 class='container-heading'><span class="heading_font"> 🫀 Heart Disease Predictor 🫀</span></h2>
+        </div>
+      </div>
+    </header>
+  
+    <section class="form-section">
+      <div class="container">
+        <div class="ml-container">
+          <form action="{{ url_for('predict')}}" method="POST">
+            <div class="form-grid">
+              <div><label for="age">Age</label><input type="text" id="age" name="age" placeholder="Your age.."></div>
+              <div><label for="sex">Sex</label><select id="sex" name="sex"><option selected>----select option----</option><option value="1">Male</option><option value="0">Female</option></select></div>
+              <div><label for="cp">Chest Pain Type</label><select id="cp" name="cp"><option selected>----select option----</option><option value="0">Typical Angina</option><option value="1">Atypical Angina</option><option value="2">Non-anginal Pain</option><option value="3">Asymtomatic</option></select></div>
+              <div><label for="trestbps">Resting Blood Pressure</label><input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg"></div>
+              <div><label for="chol">Serum Cholesterol</label><input type="text" id="chol" name="chol" placeholder="A number in range [126-564] mg/dl"></div>
+              <div><label for="fbs">Fasting Blood Sugar</label><select id="fbs" name="fbs"><option selected>----select option----</option><option value="1">Greater than 120 mg/dl</option><option value="0">Less than 120 mg/dl</option></select></div>
+              <div><label for="restecg">Resting ECG Results</label><select id="restecg" name="restecg"><option selected>----select option----</option><option value="0">Normal</option><option value="1">Having ST-T wave abnormality</option><option value="2">Probable or definite left ventricular hypertrophy</option></select></div>
+              <div><label for="thalach">Max Heart Rate</label><input type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm"></div>
+              <div><label for="exang">Exercise-induced Angina</label><select id="exang" name="exang"><option selected>----select option----</option><option value="1">Yes</option><option value="0">No</option></select></div>
+              <div><label for="oldpeak">ST Depression</label><input type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0-6.2]"></div>
+              <div><label for="slope">Slope of the Peak Exercise ST Segment</label><select id="slope" name="slope"><option selected>----select option----</option><option value="0">Upsloping</option><option value="1">Flat</option><option value="2">Downsloping</option></select></div>
+              <div><label for="ca">Number of Major Vessels</label><input type="text" id="ca" name="ca" placeholder="Typically in [0-4]"></div>
+              <div><label for="thal">Thalassemia</label><select id="thal" name="thal"><option selected>----select option----</option><option value="0">Normal</option><option value="1">Fixed Defect</option><option value="2">Reversible Defect</option></select></div>
+            </div>
+            <div class="pre-btn">
+              <input type="submit" class="my-cta-button" value="Predict">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</div>
+<div class="footer">
+  <div>
+      <h1>Heart Disease Prediction</h1>
+      <div class="footer-info">
+          <div>
+              <h1>Team Memebers</h1>
+              <p>Kotaru Sai Naga Venkata Adarsh - [21A31A1246]</p>
+              <p>Akumarthi Aksha Sharmila - [21A31A1201]</p>
+              <p>Bagga Indravathi - [21A31A1202]</p>
+              <p>Gubbala Jaya Kumar - [22A35A1202]</p>
+          </div>
+          <div>
+              <h1>Details</h1>
+              <p>2021-2025 Batch</p>
+              <p>Information Technology Department</p>
+              <p>Pragati Engineering College</p>
+          </div>
+      </div>
+      <hr style="margin-top: 4%; border-color: #393E46;">
+      <p style="text-align: center; font-size: 30px; text-transform: uppercase; font-weight: bold;">Batch@2025</p>
+  </div>
+</div>
+<script>
+  function toggleMenu() {
+    let menu = document.getElementById("menu");
+    let icon = document.getElementById("menu-icon");
+
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+        icon.innerHTML = "&#10006;";
+    } else {
+        icon.innerHTML = "&#9776;";
+    }
+}
+
+</script>
+</body>
+</html>

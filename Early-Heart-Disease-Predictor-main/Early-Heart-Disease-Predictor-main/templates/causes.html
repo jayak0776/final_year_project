@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/causes.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <p class="nav-title">Heart Disease Prediction</p>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span id="menu-icon">&#9776;</span>
+        </div>
+        <ul class="ls" id="menu">
+            <li><a href="/" class="ancor">Home</a></li>
+            <li><a href="/about" class="ancor">Info</a></li>
+            <li><a href="/causes" class="ancor" >Causes</a></li>
+            <li><a href="/team" class="ancor">Team Members</a></li>
+            <li><a href="/prediction" class="predict">Predict</a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleMenu() {
+    let menu = document.getElementById("menu");
+    let icon = document.getElementById("menu-icon");
+
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+        icon.innerHTML = "&#10006;";
+    } else {
+        icon.innerHTML = "&#9776;";
+    }
+}
+
+    </script>
+</body>
+</html>

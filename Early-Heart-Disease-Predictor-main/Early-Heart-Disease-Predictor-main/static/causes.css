@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+body {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #393E46;
+}
+
+nav {
+background-color: #393E46;
+color: #0c0c0c;
+padding: 5px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-title {
+font-size: 25px;
+font-weight: 900;
+text-transform: uppercase;
+color: #a6acb7;
+}
+
+.ls {
+list-style: none;
+display: flex;
+gap: 50px;
+margin: 0;
+padding: 0;
+}
+
+.ls li {
+cursor: pointer;
+font-size: 22px;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+.ls li:hover {
+color: #a6acb7;
+transition: 0.5s;
+}
+
+.predict{
+    text-decoration: none;
+    background-color: #0c0c0c;
+    color: #a6acb7;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+.predict:hover{
+    background-color: #a6acb7;
+    color: #393E46;
+    transition: 0.3s;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+display: none;
+font-size: 30px;
+cursor: pointer;
+color: #0c0c0c;
+}
+.ancor{
+text-decoration: none;
+color: #a6acb7;
+}
