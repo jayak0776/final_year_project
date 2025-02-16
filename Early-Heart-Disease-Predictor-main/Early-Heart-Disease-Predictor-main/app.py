@@ -83,7 +83,6 @@ def predict():
 
         # Scale the input data
         data_scaled = scaler.transform(data)
-
         # Predict class and probability
         my_prediction = model.predict(data_scaled)[0]  # 0 (low risk) or 1 (high risk)
         probability = model.predict_proba(data_scaled)[0][1]  # Probability of class 1 (high risk)
@@ -97,4 +96,4 @@ def predict():
         
 
 if __name__ == '__main__':
-     app.run(debug=True)
+     app.run(debug=False,host='0.0.0.0')
